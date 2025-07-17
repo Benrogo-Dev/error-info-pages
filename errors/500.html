@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Internal Server Error</title>
+    <link rel="stylesheet" href="/errors/shared/styles.css">
+    <style>
+        body {
+            --primary-color: #ff0000;
+            --primary-rgba: 255, 0, 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="error-code glitch" data-text="500">500</div>
+        <div class="error-message">INTERNAL SERVER ERROR</div>
+        <div class="error-description">PLEASE REPORT THIS TO <a href="mailto:ben@benrogo.net">ben@benrogo.net</a></div>
+        <div class="error-description"><strong>RAY ID:</strong> {{REQUEST-ID}}</div>
+    </div>
+    
+    <script src="/errors/shared/scripts.js"></script>
+</body>
+</html>
