@@ -8,6 +8,10 @@ export const metadata: Metadata = {
 	title: config.title,
 };
 
+/**
+ * Renders the 401 Unauthorized error page.
+ * The configuration for this page is pulled from `errorPageConfigs`.
+ */
 export default function Error401Page() {
 	return (
 		<ErrorPage

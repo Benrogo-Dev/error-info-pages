@@ -8,6 +8,11 @@ export const metadata: Metadata = {
 	title: config.title,
 };
 
+/**
+ * Renders a custom page to inform users about a deprecated endpoint.
+ * This page provides instructions on how to update their configuration.
+ * The configuration for this page is pulled from `errorPageConfigs`.
+ */
 export default function MigrationPage() {
 	return (
 		<ErrorPage

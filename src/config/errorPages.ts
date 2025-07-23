@@ -1,12 +1,22 @@
+// This file defines the configuration for each error page.
+// The `ErrorPageConfig` interface specifies the shape of the configuration object.
 export interface ErrorPageConfig {
+	// The HTTP status code (e.g., "404") or a custom code (e.g., "DEPRECATED").
 	code: string;
+	// The title of the HTML page.
 	title: string;
+	// The main message displayed on the page.
 	message: string;
+	// An array of strings that provide more details about the error.
 	descriptions: string[];
+	// The primary color used for styling the page.
 	primaryColor: string;
+	// The RGBA value of the primary color, used for transparency effects.
 	primaryRgba: string;
 }
 
+// This object contains the configuration for each error page.
+// The keys of this object are used in `build.ts` to generate the static HTML files.
 export const errorPageConfigs: Record<string, ErrorPageConfig> = {
 	"400": {
 		code: "400",

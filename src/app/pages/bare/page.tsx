@@ -5,6 +5,11 @@ export const metadata: Metadata = {
 	title: "Bare - Benrogo",
 };
 
+/**
+ * Renders the "Bare" info page.
+ * This page provides information about the "Bare" proxy server, which is an older, HTTP-based proxy.
+ * The content for this page is hardcoded here, but it uses the reusable `InfoPage` component.
+ */
 export default function BarePage() {
 	return (
 		<InfoPage

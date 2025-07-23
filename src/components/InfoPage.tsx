@@ -1,20 +1,35 @@
+/**
+ * A reusable component for creating animated, informational pages.
+ * Similar to the ErrorPage, it includes a starry background and particle effects.
+ * It's designed to display a title, subtitle, main content, and a grid of info cards.
+ * Styles are embedded to ensure the component is self-contained for static generation.
+ */
 "use client";
 
 import GlitchText from "./GlitchText";
 import Particles from "./Particles";
 import Stars from "./Stars";
 
+/** Defines the structure for an information card. */
 interface InfoCard {
+	/** The title of the card. */
 	title: string;
+	/** An array of content lines for the card. Can contain HTML. */
 	content: string[];
 }
 
 interface InfoPageProps {
+	/** The main title of the page, displayed with a glitch effect. */
 	title: string;
+	/** A subtitle displayed below the main title. Can contain HTML. */
 	subtitle: string;
+	/** The main content/body of the page. Can contain HTML. */
 	content: string;
+	/** An array of `InfoCard` objects to be displayed in a grid. */
 	cards: InfoCard[];
+	/** The primary color for text and effects. */
 	primaryColor: string;
+	/** The RGB version of the primary color for use in rgba() values. */
 	primaryRgba: string;
 }
 

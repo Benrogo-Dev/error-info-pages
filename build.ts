@@ -1,3 +1,6 @@
+// This script builds static HTML pages from React components.
+// It's used to generate error pages and info pages that can be served without a Node.js server.
+
 import { minify } from "html-minifier-terser";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -6,6 +9,8 @@ import ErrorPage from "./src/components/ErrorPage";
 import InfoPage from "./src/components/InfoPage";
 import { errorPageConfigs } from "./src/config/errorPages";
 
+// `renderToStaticMarkup` only returns the component's HTML, not a full document.
+// This function wraps the component in a basic HTML structure with a title.
 const wrapHTML = (title: string, body: string): string => `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +23,8 @@ const wrapHTML = (title: string, body: string): string => `<!DOCTYPE html>
 </body>
 </html>`;
 
+// These options are used to reduce the file size of the generated HTML.
+// This is important for performance, especially for error pages that should load quickly.
 const minifyOptions = {
 	removeComments: true,
 	removeRedundantAttributes: true,
@@ -32,6 +39,9 @@ const minifyOptions = {
 	minifyJS: true,
 };
 
+// This function generates static HTML files for each error page defined in `errorPageConfigs`.
+// This allows the error pages to be served by a static file server (like Nginx or Caddy)
+// without needing to run a Node.js server.
 async function buildErrorPages() {
 	const pages = [
 		{ key: "400", path: "dist/errors/400.html" },
@@ -63,6 +73,8 @@ async function buildErrorPages() {
 	}
 }
 
+// This function generates static HTML files for the "Bare" and "Wisp" info pages.
+// These pages provide information about different proxy servers.
 async function buildInfoPages() {
 	const bareComponent = React.createElement(InfoPage, {
 		title: "BARE",
@@ -98,6 +110,7 @@ async function buildInfoPages() {
 	await Bun.write(Bun.file("dist/pages/bare/index.html"), bareMinified);
 	console.log("Generated: dist/pages/bare/index.html");
 
+	// The "Wisp" page is for the newer, WebSocket-based proxy.
 	const wispComponent = React.createElement(InfoPage, {
 		title: "WISP",
 		subtitle:
@@ -129,6 +142,7 @@ async function buildInfoPages() {
 	console.log("Generated: dist/pages/wisp/index.html");
 }
 
+// The main function runs the build process.
 async function main() {
 	console.log("Building static pages...");
 
@@ -137,4 +151,5 @@ async function main() {
 	console.log("Done!");
 }
 
+// Run the build process.
 main().catch(console.error);

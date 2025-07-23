@@ -5,6 +5,11 @@ export const metadata: Metadata = {
 	title: "Wisp - Benrogo",
 };
 
+/**
+ * Renders the "Wisp" info page.
+ * This page provides information about the "Wisp" proxy server, which is a newer, WebSocket-based proxy.
+ * The content for this page is hardcoded here, but it uses the reusable `InfoPage` component.
+ */
 export default function WispPage() {
 	return (
 		<InfoPage

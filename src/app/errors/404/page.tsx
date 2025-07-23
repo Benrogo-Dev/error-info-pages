@@ -8,6 +8,10 @@ export const metadata: Metadata = {
 	title: config.title,
 };
 
+/**
+ * Renders the 404 Not Found error page.
+ * The configuration for this page is pulled from `errorPageConfigs`.
+ */
 export default function Error404Page() {
 	return (
 		<ErrorPage

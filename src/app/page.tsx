@@ -1,14 +1,16 @@
+/**
+ * The home page of the application.
+ * It serves as a simple index, providing links to all the generated error and info pages.
+ * This is useful for development and testing purposes.
+ */
 export default function Home() {
 	return (
 		<div
 			style={{
 				padding: "20px",
-				background: "#000",
-				color: "#fff",
-				minHeight: "100vh",
 			}}
 		>
-			<h1>Error Pages</h1>
+			<h1>La Pagez</h1>
 
 			<div
 				style={{

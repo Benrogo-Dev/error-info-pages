@@ -8,6 +8,10 @@ export const metadata: Metadata = {
 	title: config.title,
 };
 
+/**
+ * Renders the 400 Bad Request error page.
+ * The configuration for this page is pulled from `errorPageConfigs`.
+ */
 export default function Error400Page() {
 	return (
 		<ErrorPage
