@@ -1,0 +1,24 @@
+{
+	"name": "ur-mom",
+	"version": "4.2.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "bun run build.ts",
+		"check": "biome check --write .",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.1.2",
+		"@types/bun": "^1.2.19",
+		"@types/html-minifier-terser": "^7.0.2",
+		"@types/node": "^24.1.0",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"html-minifier-terser": "^7.2.0",
+		"next": "^15.4.3",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"typescript": "^5.8.3"
+	}
+}
